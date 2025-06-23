@@ -1,0 +1,20 @@
+
+.inputbox{
+  text-align: center;
+}
+#btn{
+  border-radius: 50px;
+  margin-top: 20px;
+  color: rgb(243, 241, 242);
+  background-color: rgb(227, 6, 190);
+}
+input{
+  border-radius: 50px;
+  text-align: center;
+}
+div{
+  border: 2px solid black;
+  width: 600px;
+  margin: 0 auto;
+}
+
