@@ -11,14 +11,14 @@ function Login() {
     const validUsername = 'thyagesh';
     const validPassword = '1234';
     if (!username || !password) {
-      setMessage("❌ Please fill in all fields.");
+      setMessage("Please fill in all fields.");
     } else if (username === validUsername && password === validPassword) {
-      setMessage(`✅ Welcome, ${username}! You are logged in.`);
+      setMessage(`Welcome, ${username}! You are logged in.`);
       setTimeout(() => {
         navigate('/Dashboard'); 
       }, 1000);
     } else {
-      setMessage("❌ Invalid username or password.");
+      setMessage("Invalid username or password.");
     }
   };
   return (

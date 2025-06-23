@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import axios from 'axios'; 
 import './Dashboard.css';
-
 function Dashboard() {
-  const [products, setProducts] = useState([]);
+  const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios.get('https://fakestoreapi.com/products')
+    axios.get('https://jsonplaceholder.typicode.com/users')
       .then((response) => {
-        setProducts(response.data);
+        setUsers(response.data); 
         setLoading(false);
       })
       .catch((error) => {
@@ -20,20 +19,17 @@ function Dashboard() {
   }, []);
 
   return (
-    <div className="dashboard">
-      <h2>Dashboard - Product List</h2>
+    <div>
+      <h2>Dashboard - User List</h2>
       {loading && <p>Loading...</p>}
       {error && <p style={{ color: 'red' }}>Error: {error}</p>}
-      <ul className="product-list">
-        {products.map((product) => (
-          <li key={product.id} className="product-item">
-            <h3>{product.title}</h3>
-            <img src={product.image} alt={product.title} width="100" />
-          </li>
+      <ul>
+        {users.map((user) => (
+          <li key={user.id}>{user.name} - {user.email} - {user.city}</li>
         ))}
       </ul>
     </div>
   );
 }
 
-export default Dashboard;
+export default Dashboard;
